@@ -11,6 +11,10 @@ vim.opt.expandtab = true
 vim.opt.smartindent = true
 vim.opt.autoindent = true
 
+vim.wo.foldmethod = "expr"
+vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+vim.cmd([[autocmd BufEnter * lua vim.cmd("normal zR")]])
+
 vim.opt.wrap = false
 
 vim.opt.swapfile = false
@@ -30,3 +34,6 @@ vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "80"
+
+vim.opt.cursorline = true
+vim.opt.cursorlineopt = "number"
