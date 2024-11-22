@@ -6,30 +6,32 @@ return {
 	opts = {
 		highlight = { enable = true },
 		indent = { enable = true },
-		ensure_installed = { 
-			-- Compiled 
-			"c", "asm",
+		ensure_installed = {
+			-- Compiled
+			"c",
+			"asm",
 			-- Vim related
-			"vim", "vimdoc",
+			"vim",
+			"vimdoc",
 			-- Web
-			"javascript", "html", "css",
+			"javascript",
+			"html",
+			"css",
 			-- Script
-			"ruby", "python", "lua",
+			"ruby",
+			"python",
+			"lua",
 			"bash",
 			-- Others
 			"comment",
-			
 		},
 		sync_install = false,
 
 		-- Automatically install missing parsers when entering buffer
 		-- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
 		auto_install = true,
-
-		highlight = { enable = true },
-		indent = { enable = true },  
 	},
-	config = function (_, opts) 
+	config = function(_, opts)
 		require("nvim-treesitter.configs").setup(opts)
-	end
+	end,
 }
